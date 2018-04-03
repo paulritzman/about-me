@@ -1,0 +1,31 @@
+body {
+  background-color: beige;
+  font-family: arial;
+  line-height: 2;
+  margin-left: 10px;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 24px;
+}
+p {
+  line-height: 1.5;
+}
+ol {
+  line-height: 1.5;
+  list-style: lower-alpha;
+  padding: 2%;
+}
+.questions {
+  border: 2px solid blue;
+  padding: 1%;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.answers {
+  border: 2px solid blue;
+  padding: 1%;
+  margin-right: 10px;
+}
