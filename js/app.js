@@ -44,7 +44,7 @@ if (fatherQ === 'Y' || fatherQ === 'YES') {
   alert('Please only answer with Yes or No.');
 }
 
-var emeraldQ = prompt('Is emerald Paul\'s birthstone?').toUpperCase();
+var emeraldQ = prompt('Is Paul\'s birthstone: emerald?').toUpperCase();
 console.log('emeraldQ - user answered:', emeraldQ);
 
 if (emeraldQ === 'Y' || emeraldQ === 'YES') {
