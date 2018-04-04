@@ -101,7 +101,9 @@ var questionArray = [
   'Is Paul a "Certified Ethical Hacker" (CEH)? (Y/N)',
   'Are pineapples Paul\'s favorite pizza topping? (Y/N)',
   'Did Paul\'s father serve in the U.S. Navy? (Y/N)',
-  'Is Paul\'s birthstone: emerald? (Y/N)'];
+  'Is Paul\'s birthstone: emerald? (Y/N)',
+  'Guess what number Paul\'s thinking of, from 1 to 10 inclusive.',
+  'Which states does Paul hope to move to at some point?'];
 
 var responseArray = [
   'Paul has competed in 9 different sports.',
@@ -114,16 +116,47 @@ var answerArray = ['Y','Y','N','N','Y','YES','YES','NO','NO','YES'];
 
 var wrongAnswerArray = ['N','N','Y','Y','N','NO','NO','YES','YES','NO'];
 
+var playerScore = 0;
+
+var userAnswer;
+
+var userName = prompt('Please enter your first name.');
+
 for (var i = 0; i < questionArray.length; i++) {
-  var userAnswer = prompt(questionArray[i]).toUpperCase();
+  if (i < 6) {
+    userAnswer = prompt(questionArray[i]).toUpperCase();
+    console.log('For question ' + i + ', the user answered: ' + userAnswer);
 
-  console.log('For question ' + i + ', the user answered: ' + userAnswer);
+    if (userAnswer === answerArray[i] || userAnswer === answerArray[i + 5]) {
+      alert('Correct! ' + responseArray[i]);
+      playerScore++;
+    } else if (userAnswer === wrongAnswerArray[i] || userAnswer === wrongAnswerArray[i + 5]) {
+      alert('Incorrect. ' + responseArray[i]);
+    } else {
+      alert('invalid response');
+    } // closes main, inner question if-else statement
 
-  if (userAnswer === answerArray[i] || userAnswer === answerArray[i+5]) {
-    alert('Correct! ' + responseArray[i]);
-  } else if (userAnswer === wrongAnswerArray[i] || userAnswer === wrongAnswerArray[i+5]) {
-    alert('Incorrect. ' + responseArray[i]);
-  } else {
-    alert('invalid response');
-  }
-}
+  } else if (i === 5) {
+    var randomNum = Math.floor(Math.random() * 10 + 1);
+    var randomGuesses = 4;
+
+    do {
+      userAnswer = parseInt(prompt(questionArray[i] + '\nNumber of guesses left: ' + randomGuesses));
+      console.log('For question ' + i + ', the user answered: ' + userAnswer);
+      console.log('Guesses left = ' + (randomGuesses - 1));
+
+      if (userAnswer === randomNum) {
+        alert('Correct! The number was ' + randomNum + '.');
+        break;
+      } else if (userAnswer < randomNum){
+        alert('Close, but too low. Try again.');
+      } else if (userAnswer > randomNum){
+        alert('Close, but too high. Try again.');
+      } // closes random number if-else statement
+
+      randomGuesses--;
+    } while (userAnswer !== randomNum && randomGuesses > 0);
+  } // closes "else if (i === 5)"
+} // closes for-loop
+
+alert('You got ' + playerScore + ' of ' + questionArray.length + ' questions correct, ' + userName + '!');
