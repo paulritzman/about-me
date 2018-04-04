@@ -1,5 +1,7 @@
 'use strict';
 
+/*
+
 var totalScore = 0; // Declare a totalScore variable to track number of correct responses.
 
 // Prompts the user to answer a question, logging the user's answer and adjusting
@@ -80,6 +82,48 @@ if (emeraldQ === 'Y' || emeraldQ === 'YES') {
   alert('Please only answer with Yes or No.');
 }
 
+var randomNumQ = prompt('Placeholder text');
+console.log('randomNumQ - user answered', randomNumQ);
+
+var stateGuessQ = prompt('Placeholder text');
+console.log('randomNumQ - user answered', stateGuessQ);
+
 // Output the final score to the console and notify user of their final score.
 console.log('totalScore =', totalScore);
 alert('You scored: ' + totalScore + '/5!');
+
+*/
+
+// ***** DO NOT TOUCH ANYTHING ABOVE THIS LINE - IT IS LEGACY CODE *****
+
+var questionArray = [
+  'Has Paul competed in over 5 different sports? (Y/N)',
+  'Is Paul a "Certified Ethical Hacker" (CEH)? (Y/N)',
+  'Are pineapples Paul\'s favorite pizza topping? (Y/N)',
+  'Did Paul\'s father serve in the U.S. Navy? (Y/N)',
+  'Is Paul\'s birthstone: emerald? (Y/N)'];
+
+var responseArray = [
+  'Paul has competed in 9 different sports.',
+  'Paul got his CEH ceritification in August 2016.',
+  'Pineapples are fine on pizza, but not on Paul\'s pizza.',
+  'Paul\'s father was in the Air Force.',
+  'Paul was born in May.'];
+
+var answerArray = ['Y','Y','N','N','Y','YES','YES','NO','NO','YES'];
+
+var wrongAnswerArray = ['N','N','Y','Y','N','NO','NO','YES','YES','NO'];
+
+for (var i = 0; i < questionArray.length; i++) {
+  var userAnswer = prompt(questionArray[i]).toUpperCase();
+
+  console.log('For question ' + i + ', the user answered: ' + userAnswer);
+
+  if (userAnswer === answerArray[i] || userAnswer === answerArray[i+5]) {
+    alert('Correct! ' + responseArray[i]);
+  } else if (userAnswer === wrongAnswerArray[i] || userAnswer === wrongAnswerArray[i+5]) {
+    alert('Incorrect. ' + responseArray[i]);
+  } else {
+    alert('invalid response');
+  }
+}
