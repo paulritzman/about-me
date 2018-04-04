@@ -1,8 +1,8 @@
 body {
   background-color: beige;
   font-family: arial;
-  line-height: 2;
   margin-left: 10px;
+  line-height: 2;
 }
 h1 {
   font-size: 36px;
@@ -10,7 +10,11 @@ h1 {
 h2 {
   font-size: 24px;
 }
+h3 {
+  font-size: 20px;
+}
 p {
+  margin: 5px 0px;
   line-height: 1.5;
 }
 ol {
@@ -22,6 +26,12 @@ ul {
   line-height: 1.5;
   list-style: circle;
   margin-left: 20px;
+}
+dt {
+  margin-left: 20px;
+}
+dd {
+  margin-left: 30px;
 }
 .questions {
   border: 2px solid blue;
