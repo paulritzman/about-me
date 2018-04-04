@@ -15,8 +15,13 @@ p {
 }
 ol {
   line-height: 1.5;
-  list-style: lower-alpha;
+  list-style: decimal;
   padding: 2%;
+}
+ul {
+  line-height: 1.5;
+  list-style: circle;
+  margin-left: 20px;
 }
 .questions {
   border: 2px solid blue;
