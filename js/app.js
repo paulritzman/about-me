@@ -142,11 +142,11 @@ var responseArray = [
 
 // Creates an array to hold the answers to the first 5 questions
 // Allows for the user to answer with either the word or just the first letter (YES vs Y, NO vs N)
-var answerArray = ['Y','Y','N','N','Y','YES','YES','NO','NO','YES'];
+var answerArray = [['Y','Y','N','N','Y'], ['YES','YES','NO','NO','YES']];
 
 // Creates an array to hold the inverse of the correct answers to the first 5 questions
 // Allows for the user to answer with either the word or just the first letter (YES vs Y, NO vs N)
-var wrongAnswerArray = ['N','N','Y','Y','N','NO','NO','YES','YES','NO'];
+var wrongAnswerArray = [['N','N','Y','Y','N'], ['NO','NO','YES','YES','NO']];
 
 // Creates an array to hold the states that Paul would like to move to - for question #7
 var stateAnswers = ['arizona', 'california', 'texas'];
@@ -178,10 +178,10 @@ function askQuestion1_5 () {
       * userAnswer will be compared to answerArray[0] (which = 'Y') and answerArray[5] (which = 'YES'), and so on, allowing for
       * the user to answer with either the whole word ('YES' or 'NO') or just the first letter ('Y' or 'N')
       */
-    if (userAnswer === answerArray[i] || userAnswer === answerArray[i + 5]) {
+    if (userAnswer === answerArray[0][i] || userAnswer === answerArray[1][i]) {
       alert('Correct! ' + responseArray[i]);
       playerScore++;
-    } else if (userAnswer === wrongAnswerArray[i] || userAnswer === wrongAnswerArray[i + 5]) {
+    } else if (userAnswer === wrongAnswerArray[0][i] || userAnswer === wrongAnswerArray[1][i]) {
       alert('Incorrect. ' + responseArray[i]);
     } else {
       alert('Please only answer yes (Y) or no (N).');
@@ -225,7 +225,7 @@ function askQuestion7(i) {
     console.log('For question ' + i + ', the user answered: ' + userAnswer);
     console.log('Guesses left = ' + (stateGuesses - 1));
 
-    if (userAnswer === stateAnswers[0] || userAnswer === stateAnswers[1] || userAnswer === stateAnswers[2]) {
+    if (stateAnswers.includes(userAnswer)) {
       alert('Correct! All possible answers: ' + stateAnswers);
       playerScore++; // Increments the user's score
       break; // Breaks out of the loop if the user guesses correctly
@@ -239,7 +239,7 @@ function askQuestion7(i) {
     if (stateGuesses === 0) {
       alert('Sorry, those weren\'t correct. The three states Paul would like to move to are: ' + stateAnswers);
     }
-  } while ((userAnswer !== stateAnswers[0] || userAnswer !== stateAnswers[1] || userAnswer !== stateAnswers[2]) && stateGuesses > 0);
+  } while (!stateAnswers.includes(userAnswer) && stateGuesses > 0);
   // Above line checks to see if the user's guess does not match any of the possible correct answers
 }
 
