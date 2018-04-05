@@ -116,6 +116,8 @@ var answerArray = ['Y','Y','N','N','Y','YES','YES','NO','NO','YES'];
 
 var wrongAnswerArray = ['N','N','Y','Y','N','NO','NO','YES','YES','NO'];
 
+var stateAnswers = ['arizona', 'california', 'texas'];
+
 var playerScore = 0;
 
 var userAnswer;
@@ -123,7 +125,7 @@ var userAnswer;
 var userName = prompt('Please enter your first name.');
 
 for (var i = 0; i < questionArray.length; i++) {
-  if (i < 6) {
+  if (i < 5) {
     userAnswer = prompt(questionArray[i]).toUpperCase();
     console.log('For question ' + i + ', the user answered: ' + userAnswer);
 
@@ -147,6 +149,7 @@ for (var i = 0; i < questionArray.length; i++) {
 
       if (userAnswer === randomNum) {
         alert('Correct! The number was ' + randomNum + '.');
+        playerScore++;
         break;
       } else if (userAnswer < randomNum){
         alert('Close, but too low. Try again.');
@@ -156,7 +159,25 @@ for (var i = 0; i < questionArray.length; i++) {
 
       randomGuesses--;
     } while (userAnswer !== randomNum && randomGuesses > 0);
-  } // closes "else if (i === 5)"
+  } else if (i === 6) {
+    var stateGuesses = 6;
+
+    do {
+      userAnswer = prompt('Which states does Paul hope to move to at some point?\nNumber of guesses left: ' + stateGuesses).toLowerCase();
+      console.log('For question ' + i + ', the user answered: ' + userAnswer);
+      console.log('Guesses left = ' + (stateGuesses - 1));
+
+      if (userAnswer === stateAnswers[0] || userAnswer === stateAnswers[1] || userAnswer === stateAnswers[2]) {
+        alert('Correct! All possible answer: ' + stateAnswers);
+        playerScore++;
+        break;
+      } else {
+        alert('Nope, not that one. Try again.');
+      } // closes state if-else statement
+
+      stateGuesses--;
+    } while ((userAnswer !== stateAnswers[0] || userAnswer !== stateAnswers[1] || userAnswer !== stateAnswers[2]) && stateGuesses > 0);
+  } // closes the "else-if (1 === 6)" block
 } // closes for-loop
 
 alert('You got ' + playerScore + ' of ' + questionArray.length + ' questions correct, ' + userName + '!');
