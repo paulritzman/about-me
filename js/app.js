@@ -7,7 +7,7 @@ var questionArray = [
   'Did Paul\'s father serve in the U.S. Navy? (Y/N)',
   'Is Paul\'s birthstone: emerald? (Y/N)',
   'Guess what number Paul\'s thinking of, from 1 to 10 inclusive.',
-  'Which states does Paul hope to move to at some point?'];
+  'Which states would Paul like to move to at some point?'];
 
 var responseArray = [
   'Paul has competed in 9 different sports.',
@@ -28,12 +28,15 @@ var userAnswer;
 
 var userName = prompt('Please enter your first name.');
 
-alert('Let\'s start the Guessing Game!')
+alert('Let\'s start the Guessing Game!');
 
 for (var i = 0; i < questionArray.length; i++) {
   if (i === 5) {
     var randomNum = Math.floor(Math.random() * 10 + 1);
     var randomGuesses = 4;
+
+    var writeRandom = document.getElementById('random-result');
+    writeRandom.textContent = 'The number was: ' + randomNum;
 
     do {
       userAnswer = parseInt(prompt(questionArray[i] + '\nNumber of guesses left: ' + randomGuesses));
