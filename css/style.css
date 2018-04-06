@@ -39,6 +39,9 @@ dt {
 dd {
   margin-left: 35px;
 }
+footer {
+  text-align: center;
+}
 .questions {
   border: 2px dashed rgb(54, 54, 138);
   border-radius: 50px;
