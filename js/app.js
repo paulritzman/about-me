@@ -43,6 +43,7 @@ var userName = prompt('Please enter your first name.');
 // Notifies the user the Guessing Game is about to begin
 alert('Let\'s start the Guessing Game!');
 
+// Declares function to ask questions #1 - 5
 function askQuestion1_5 () {
   //Loops through questions #1 - 5
   for (var i = 0; i < 5; i++) {
@@ -63,10 +64,11 @@ function askQuestion1_5 () {
       alert('Incorrect. ' + responseArray[i]);
     } else {
       alert('Please only answer yes (Y) or no (N).');
-    } // closes else statement
+    }
   }
 }
 
+// Declares function to ask questions #6
 function askQuestion6 (i) {
   var randomNum = Math.floor(Math.random() * 10 + 1); // Generates a random number between 1 and 10 (inclusive)
   var randomGuesses = 4; // Sets the total number of guesses the user is allowed to 4
@@ -88,14 +90,14 @@ function askQuestion6 (i) {
       alert('Close, but too low. Try again.');
     } else if (userAnswer > randomNum){
       alert('Close, but too high. Try again.');
-    } // closes random number if-else statement
+    }
 
     randomGuesses--; // Decrements the number of guesses the user has left
   } while (userAnswer !== randomNum && randomGuesses > 0); // Checks to see if the user guessed incorrectly and if they have guesses left
 }
 
+// Declares function to ask questions #7
 function askQuestion7(i) {
-  // Checks to see if question #7 (state moving)is being asked
   var stateGuesses = 6; // Sets the total number of guesses the user is allowed to 6
 
   do { // Loops through question #7, tracking the number of guesses the user has left
@@ -109,7 +111,7 @@ function askQuestion7(i) {
       break; // Breaks out of the loop if the user guesses correctly
     } else {
       alert('Nope, not that one. Try again.');
-    } // closes state if-else statement
+    }
 
     stateGuesses--; // Decrements the number of guesses the user has left
 
@@ -121,6 +123,8 @@ function askQuestion7(i) {
   // Above line checks to see if the user's guess does not match any of the possible correct answers
 }
 
+// Calls each function to ask run the game
+// Corresponding indexes passed as arguments for askQuestion6 and askQuestion7
 askQuestion1_5();
 askQuestion6(5);
 askQuestion7(6);
