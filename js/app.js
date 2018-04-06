@@ -39,18 +39,6 @@ var userAnswer;
 // Prompts the user to input their name, and assigns it to userName
 var userName = prompt('Please enter your first name.');
 
-// Notifies the user the Guessing Game is about to begin
-alert('Let\'s start the Guessing Game!');
-
-// Calls each function to run the game
-// Corresponding indexes passed as arguments for askQuestion6 and askQuestion7
-askQuestion1_5();
-askQuestion6(5);
-askQuestion7(6);
-
-// Displays the user's score compared to the total number of questions
-alert('You got ' + playerScore + ' of ' + questionArray.length + ' questions correct, ' + userName + '!');
-
 // Declares function to ask questions #1 - 5
 function askQuestion1_5 () {
   //Loops through questions #1 - 5
@@ -130,3 +118,15 @@ function askQuestion7(i) {
   } while (!stateAnswers.includes(userAnswer) && stateGuesses > 0);
   // Above line checks to see if the user's guess does not match any of the possible correct answers
 }
+
+// Notifies the user the Guessing Game is about to begin
+alert('Let\'s start the Guessing Game!');
+
+// Calls each function to run the game
+// Corresponding indexes passed as arguments for askQuestion6 and askQuestion7
+askQuestion1_5();
+askQuestion6(5);
+askQuestion7(6);
+
+// Displays the user's score compared to the total number of questions
+alert('You got ' + playerScore + ' of ' + questionArray.length + ' questions correct, ' + userName + '!');
