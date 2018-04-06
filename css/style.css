@@ -17,6 +17,7 @@ h2 {
 h3 {
   font-size: 24px;
   text-align: center;
+  border-bottom: 1px solid black;
 }
 p {
   margin: 5px 0px;
@@ -49,6 +50,9 @@ dd {
   border-radius: 50px;
   padding: 0% 2% 2% 2%;
   margin-top: 5px;
+}
+.institution {
+  font-weight: bold;
 }
 .fav-movies {
   margin: 0px 0px;
