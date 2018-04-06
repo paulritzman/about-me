@@ -30,14 +30,7 @@ ol {
 }
 ul {
   line-height: 1.5;
-  list-style: circle;
-  margin-left: 20px;
-}
-dt {
-  margin-left: 20px;
-}
-dd {
-  margin-left: 35px;
+  margin-left: 15px;
 }
 footer {
   text-align: center;
@@ -59,4 +52,11 @@ footer {
 }
 .top-ten {
   margin: 0px 0px;
+}
+.degree {
+  list-style-type: none;
+}
+.states {
+  list-style-type: circle;
+  margin-left: 20px;
 }

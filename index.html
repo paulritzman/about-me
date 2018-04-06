@@ -8,6 +8,19 @@
   <body>
     <h1 id="top">About Paul: A Guessing Game</h1>
     <p>Thank you for taking the time to play the guessing game! You will find the questions and answers below. If you would like to play again for a better score, simply refresh this page.</p>
+    <aside class="side-bar">
+      <h4>Contents</h4>
+      <ul>
+        <li><a href="#questions">Questions</a></li>
+        <li><a href="#answers">Answers</a></li>
+        <li><a href="#additional-info">Additional Information</a>
+          <ul>
+            <li><a href="#edu-history">Education</a></li>
+            <li><a href="#fav-movies">Favorite Movies</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside> <!-- End of side-bar -->
     <div class="questions">
       <h2 id="questions">Questions</h2>
       <ol>
@@ -21,7 +34,7 @@
       </ol>
     </div> <!-- End of questions -->
     <div class="answers">
-      <h2 id="answer">Answers</h2>
+      <h2 id="answers">Answers</h2>
       <ol>
         <li>Yes</li>
         <li>Yes</li>
@@ -30,7 +43,7 @@
         <li>Yes</li>
         <li id="random-result">Random</li>
         <li>Correct States:
-          <ul>
+          <ul class="states">
             <li>Arizona</li>
             <li>California</li>
             <li>Texas</li>
@@ -44,25 +57,37 @@
         <h3 id="edu-history">Education History</h3>
         <ul>
           <li><span class="institution">Code Fellows</span>
-            <dl>
-              <dt>Certificate</dt>
-              <dd>Advanced Software Development in Full-Stack JavaScript</dd>
-            </dl>
+            <ul>
+              <li>Certificate
+                <ul>
+                  <li>Advanced Software Development in Full-Stack JavaScript</li>
+                </ul>
+              </li>
+            </ul>
           </li>
           <li><span class="institution">Arizona State University</span>
-            <dl>
-              <dt>Bachelor of Science</dt>
-              <dd>Software Engineering</dd>
-            </dl>
+            <ul>
+              <li>Bachelor of Science
+                <ul>
+                  <li>Software Engineering</li>
+                </ul>
+              </li>
+            </ul>
           </li>
           <li><span class="institution">Edmonds Community College</span>
-            <dl>
-              <dt>Associate of Technical Arts</dt>
-              <dd>Information Security and Digital Forensics</dd>
-              <dt>Certificate</dt>
-              <dd>Digital Forenics</dd>
-              <dd>Network Security Specialist</dd>
-            </dl>
+            <ul>
+              <li>Associate of Technical Arts
+                <ul>
+                  <li>Information Security and Digital Forensics</li>
+                </ul>
+              </li>
+              <li>Certificate
+                <ul>
+                  <li>Digital Forenics</li>
+                  <li>Network Security Specialist</li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
       </div> <!-- End of edu-history -->
@@ -83,6 +108,6 @@
       </div> <!-- End of fav-movies -->
     </div> <!-- End of bio-info -->
     <footer><a href="#top">back to top</a></footer>
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
   </body>
 </html>
