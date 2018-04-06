@@ -50,11 +50,10 @@ function askQuestion1_5 () {
     userAnswer = prompt(questionArray[i]).toUpperCase();
     console.log('For question ' + i + ', the user answered: ' + userAnswer);
 
-    /* Verifies user's guess against the values stored in answerArray
+    /* Verifies user's guess against the values stored in answerArray and wrongAnswerArray
       * Displays the corresponding response from responseArray
       *
-      * answerArray[i] and answerArray[i + 5] are both checked so that, if the user enters 'YES' on question #1 (index 0) for example,
-      * userAnswer will be compared to answerArray[0] (which = 'Y') and answerArray[5] (which = 'YES'), and so on, allowing for
+      * answerArray and wrongAnswerArray store all accepted answers in multidimensional arrays, allowing
       * the user to answer with either the whole word ('YES' or 'NO') or just the first letter ('Y' or 'N')
       */
     if (userAnswer === answerArray[0][i] || userAnswer === answerArray[1][i]) {
@@ -70,7 +69,7 @@ function askQuestion1_5 () {
 
 // Declares function to ask questions #6
 function askQuestion6 (i) {
-  var randomNum = Math.floor(Math.random() * 10 + 1); // Generates a random number between 1 and 10 (inclusive)
+  var randomNum = Math.floor(Math.random() * 10 + 1); // Generates a random number from 1 to 10 (inclusive)
   var randomGuesses = 4; // Sets the total number of guesses the user is allowed to 4
 
   // Writes the random number to the document, so the user can see the correct number at the end of the game
@@ -93,7 +92,8 @@ function askQuestion6 (i) {
     }
 
     randomGuesses--; // Decrements the number of guesses the user has left
-  } while (userAnswer !== randomNum && randomGuesses > 0); // Checks to see if the user guessed incorrectly and if they have guesses left
+  } while (userAnswer !== randomNum && randomGuesses > 0);
+  // Above line checks to see if the user guessed incorrectly and if they have guesses left
 }
 
 // Declares function to ask questions #7
@@ -123,7 +123,7 @@ function askQuestion7(i) {
   // Above line checks to see if the user's guess does not match any of the possible correct answers
 }
 
-// Calls each function to ask run the game
+// Calls each function to run the game
 // Corresponding indexes passed as arguments for askQuestion6 and askQuestion7
 askQuestion1_5();
 askQuestion6(5);
