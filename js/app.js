@@ -98,7 +98,7 @@ function askQuestion6(i) {
     console.log('Guesses left = ' + (randomGuesses - 1));
 
     if (userAnswer === randomNum) {
-      alert('Correct! The number was: ' + randomNum + '.');
+      alert('Correct! The number was: ' + randomNum);
       playerScore++; // Increments the user's score
       break; // Breaks out of the loop if the user guesses correctly
     } else if (userAnswer < randomNum){
@@ -113,7 +113,6 @@ function askQuestion6(i) {
       alert('Sorry, you weren\'t able to guess it. The correct number was: ' + randomNum);
     }
   } while (randomGuesses > 0);
-  // Above line checks to see if the user guessed incorrectly and if they have guesses left
 }
 
 // Declares function to ask questions #7
@@ -127,7 +126,7 @@ function askQuestion7(i) {
 
     if (stateAnswers.includes(userAnswer)) {
       stateAnswers.splice(stateAnswers.indexOf(userAnswer), 1); // Removes guessed state from stateAnswers
-      alert('Correct!\nThe other possible answers were: ' + stateAnswers.join(' and '));
+      alert('Correct!\nThe other possible answers were: ' + stateUpperCase().join(' and '));
       playerScore++; // Increments the user's score
       break; // Breaks out of the loop if the user guesses correctly
     } else {
@@ -138,7 +137,7 @@ function askQuestion7(i) {
 
     // Notifies the user of all possible correct answers when they have no guesses left
     if (stateGuesses === 0) {
-      alert('Sorry, those weren\'t correct.\nThe states Paul would like to move to are: ' + stateAnswers.join(', '));
+      alert('Sorry, those weren\'t correct.\nPaul would like to move to: ' + stateUpperCase().join(', '));
     }
   } while (stateGuesses > 0);
 }
