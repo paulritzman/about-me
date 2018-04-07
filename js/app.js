@@ -39,6 +39,26 @@ var userAnswer;
 // Prompts the user to input their name, and assigns it to userName
 var userName = prompt('Please enter your first name.');
 
+// Declares function to create stateUpperArr array, which holds the elements of stateAnswers but
+// with the first letter of each element capitalized
+function stateUpperCase() {
+  var stateUpperArr = []; // Declares array to hold the states with the first letter capitalized
+  for (var i = 0; i < stateAnswers.length; i++) {
+    var tempState = stateAnswers[i];
+    var stateLetters = []; // Declares an array to hold all letters of each state
+    for (var j = 0; j < tempState.length; j++) {
+      if (j === 0) { // Checks if it's the first letter of the state
+        stateLetters[j] = tempState.charAt(j).toUpperCase(); // Capitalizes the first letter of the state
+      } else {
+        stateLetters[j] = tempState.charAt(j);
+      }
+    }
+    stateUpperArr.push([stateLetters.join('')]);
+    // Above line creates an element in stateUpperArr consisting of the combined letters from stateLetters
+  }
+  return stateUpperArr;
+}
+
 // Declares function to ask questions #1 - 5
 function askQuestion1_5() {
   //Loops through questions #1 - 5
