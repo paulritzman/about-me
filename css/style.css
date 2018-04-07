@@ -1,7 +1,8 @@
 body {
   background-color: white;
-  border-left: 200px solid rgb(54, 54, 138);
-  /* border-right: 75px solid rgb(54, 54, 138); */
+  border-left: 200px solid rgb(54, 54, 138); /* fall back border in case browser doesn't accept rgba */
+  border-left: 200px solid rgb(54, 54, 138, .8); /* 80% opacity, if supported by browser */
+  background-clip: padding-box;
   font-family: arial;
   padding: 0px 25px;
   line-height: 2;
