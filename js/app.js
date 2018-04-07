@@ -8,7 +8,7 @@ var questionArray = [
   'Did Paul\'s father serve in the U.S. Navy? (Y/N)',
   'Is Paul\'s birthstone: emerald? (Y/N)',
   'Guess what number Paul\'s thinking of, from 1 to 10 inclusive.',
-  'Which states would Paul like to move to at some point?'];
+  'Name a state that Paul would like to move to at some point?'];
 
 // Creates an array to hold the responses for the first 5 questions
 var responseArray = [
@@ -27,7 +27,7 @@ var answerArray = [['Y','Y','N','N','Y'], ['YES','YES','NO','NO','YES']];
 var wrongAnswerArray = [['N','N','Y','Y','N'], ['NO','NO','YES','YES','NO']];
 
 // Creates an array to hold the states that Paul would like to move to - for question #7
-var stateAnswers = ['arizona', 'california', 'texas'];
+var stateAnswers = ['arizona','california','texas'];
 
 // Declares playerScore, which will be used to track the number of correct guesses the user makes
 // Initially assigned the value of zero (0), in the event the user guesses no answers correctly
@@ -40,13 +40,13 @@ var userAnswer;
 var userName = prompt('Please enter your first name.');
 
 // Declares function to ask questions #1 - 5
-function askQuestion1_5 () {
+function askQuestion1_5() {
   //Loops through questions #1 - 5
   for (var i = 0; i < 5; i++) {
     userAnswer = prompt(questionArray[i]).toUpperCase();
     console.log('For question ' + i + ', the user answered: ' + userAnswer);
 
-    /* Verifies user's guess against the values stored in answerArray and wrongAnswerArray
+    /*  Verifies user's guess against the values stored in answerArray and wrongAnswerArray
       * Displays the corresponding response from responseArray
       *
       * answerArray and wrongAnswerArray store all accepted answers in multidimensional arrays, allowing
@@ -64,7 +64,7 @@ function askQuestion1_5 () {
 }
 
 // Declares function to ask questions #6
-function askQuestion6 (i) {
+function askQuestion6(i) {
   var randomNum = Math.floor(Math.random() * 10 + 1); // Generates a random number from 1 to 10 (inclusive)
   var randomGuesses = 4; // Sets the total number of guesses the user is allowed to 4
 
@@ -97,12 +97,13 @@ function askQuestion7(i) {
   var stateGuesses = 6; // Sets the total number of guesses the user is allowed to 6
 
   do { // Loops through question #7, tracking the number of guesses the user has left
-    userAnswer = prompt('Which states does Paul hope to move to at some point?\nNumber of guesses left: ' + stateGuesses).toLowerCase();
+    userAnswer = prompt(questionArray[i] + '\nNumber of guesses left: ' + stateGuesses).toLowerCase();
     console.log('For question ' + i + ', the user answered: ' + userAnswer);
     console.log('Guesses left = ' + (stateGuesses - 1));
 
     if (stateAnswers.includes(userAnswer)) {
-      alert('Correct! All possible answers: ' + stateAnswers);
+      stateAnswers.splice(stateAnswers.indexOf(userAnswer), 1); // Removes guessed state from stateAnswers
+      alert('Correct!\nThe other possible answers were: ' + stateAnswers.join(' and '));
       playerScore++; // Increments the user's score
       break; // Breaks out of the loop if the user guesses correctly
     } else {
@@ -113,10 +114,9 @@ function askQuestion7(i) {
 
     // Notifies the user of all possible correct answers when they have no guesses left
     if (stateGuesses === 0) {
-      alert('Sorry, those weren\'t correct. The three states Paul would like to move to are: ' + stateAnswers);
+      alert('Sorry, those weren\'t correct.\nThe states Paul would like to move to are: ' + stateAnswers.join(', '));
     }
-  } while (!stateAnswers.includes(userAnswer) && stateGuesses > 0);
-  // Above line checks to see if the user's guess does not match any of the possible correct answers
+  } while (stateGuesses > 0);
 }
 
 // Notifies the user the Guessing Game is about to begin
@@ -124,8 +124,8 @@ alert('Let\'s start the Guessing Game!');
 
 // Calls each function to run the game
 // Corresponding indexes passed as arguments for askQuestion6 and askQuestion7
-askQuestion1_5();
-askQuestion6(5);
+//askQuestion1_5();
+//askQuestion6(5);
 askQuestion7(6);
 
 // Displays the user's score compared to the total number of questions
