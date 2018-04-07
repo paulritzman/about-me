@@ -78,7 +78,7 @@ function askQuestion6(i) {
     console.log('Guesses left = ' + (randomGuesses - 1));
 
     if (userAnswer === randomNum) {
-      alert('Correct! The number was ' + randomNum + '.');
+      alert('Correct! The number was: ' + randomNum + '.');
       playerScore++; // Increments the user's score
       break; // Breaks out of the loop if the user guesses correctly
     } else if (userAnswer < randomNum){
@@ -88,7 +88,11 @@ function askQuestion6(i) {
     }
 
     randomGuesses--; // Decrements the number of guesses the user has left
-  } while (userAnswer !== randomNum && randomGuesses > 0);
+
+    if (randomGuesses === 0) {
+      alert('Sorry, you weren\'t able to guess it. The correct number was: ' + randomNum);
+    }
+  } while (randomGuesses > 0);
   // Above line checks to see if the user guessed incorrectly and if they have guesses left
 }
 
@@ -124,8 +128,8 @@ alert('Let\'s start the Guessing Game!');
 
 // Calls each function to run the game
 // Corresponding indexes passed as arguments for askQuestion6 and askQuestion7
-//askQuestion1_5();
-//askQuestion6(5);
+askQuestion1_5();
+askQuestion6(5);
 askQuestion7(6);
 
 // Displays the user's score compared to the total number of questions
