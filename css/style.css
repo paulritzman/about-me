@@ -1,7 +1,7 @@
 body {
   background-color: white;
-  border-left: 200px solid rgb(54, 54, 138); /* fall back border in case browser doesn't accept rgba */
-  border-left: 200px solid rgb(54, 54, 138, .8); /* 80% opacity, if supported by browser */
+  border-left: 200px solid rgb(54, 54, 138); /* fall back in case browser doesn't accept rgba */
+  border-left: 200px solid rgba(54, 54, 138, .8); /* 80% opacity, if supported by browser */
   background-clip: padding-box;
   font-family: arial;
   padding: 0px 25px;
@@ -78,4 +78,9 @@ a:hover {
 .states {
   list-style-type: circle;
   margin-left: 20px;
+}
+.in-progress {
+  font-size: 12px;
+  color: rgb(255, 0, 0); /* fall back in case browser doesn't accept rgba */
+  color: rgba(255, 0, 0, .75); /* 75% opacity, if supported by browser */
 }
