@@ -7,18 +7,36 @@ body {
   padding: 0px 25px;
   line-height: 2;
 }
+header {
+  text-align: center;
+  padding-top: 25px;
+  line-height: 1.5;
+}
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 25px 10px 10px 10px;
+  color: white;
+}
+aside a {
+  color: white;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+}
 h1 {
   font-size: 36px;
-  text-align: center;
 }
 h2 {
   font-size: 30px;
   text-align: center;
 }
 h3 {
+  border-bottom: 1px solid black;
   font-size: 24px;
   text-align: center;
-  border-bottom: 1px solid black;
 }
 h4 {
   font-size: 24px;
@@ -29,7 +47,6 @@ p {
   margin-bottom: 10px;
   line-height: 1.5;
   font-size: 14px;
-  text-align: center;
 }
 ol {
   line-height: 1.5;
@@ -40,22 +57,8 @@ ul {
   line-height: 1.5;
   margin-left: 15px;
 }
-footer {
-  text-align: center;
-}
 a:hover {
   background-color: grey;
-}
-.side-bar a {
-  color: white;
-  text-decoration: none;
-}
-.side-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 10px;
-  color: white;
 }
 .questions {
   border: 2px dashed rgb(54, 54, 138);
@@ -73,7 +76,10 @@ a:hover {
   font-weight: bold;
 }
 .top-ten {
-  margin: 0px 0px;
+  margin-top: 10px;
+}
+.top-ten li {
+  margin-left: 10px;
 }
 .degree {
   list-style-type: none;
@@ -86,4 +92,7 @@ a:hover {
   font-size: 12px;
   color: rgb(255, 0, 0); /* fall back in case browser doesn't accept rgba */
   color: rgba(255, 0, 0, .75); /* 75% opacity, if supported by browser */
+}
+#edu-history {
+  margin-bottom: 20px;
 }
