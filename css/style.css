@@ -72,6 +72,9 @@ a:hover {
   padding: 0% 2% 2% 2%;
   margin-top: 5px;
 }
+.bio-info {
+  margin-top: 10px;
+}
 .institution {
   font-weight: bold;
 }
