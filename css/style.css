@@ -99,8 +99,8 @@ a:hover {
 .score-section {
   position: fixed;
   bottom: 5px;
-  left: 60px;
-  color: black;
+  left: 30px;
+  color: white;
 }
 .score {
   font-size: 28px;
