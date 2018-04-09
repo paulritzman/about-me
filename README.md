@@ -1,6 +1,6 @@
 # about-me
 
-This is a project to ask a user to guess questions about me.
+This is a project for Code Fellows 201, which prompts users to answer questions about the author. Once all of the questions are answered, they are taken to an "About Me" page with facts about the author.
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/paulritzman/about-me/blob/master/LICENSE) file for details
 
