@@ -96,6 +96,15 @@ a:hover {
   color: rgb(255, 0, 0); /* fall back in case browser doesn't accept rgba */
   color: rgba(255, 0, 0, .75); /* 75% opacity, if supported by browser */
 }
+.score-section {
+  position: fixed;
+  bottom: 5px;
+  left: 60px;
+  color: black;
+}
+.score {
+  font-size: 28px;
+}
 #edu-history {
   margin-bottom: 20px;
 }

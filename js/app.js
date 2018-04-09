@@ -142,6 +142,12 @@ function askQuestion7(i) {
   } while (stateGuesses > 0);
 }
 
+// Declares function to write user's total score to the document
+function writeScore(totalScore) {
+  var scoreText = document.getElementById('total-score');
+  scoreText.textContent = totalScore + ' / ' + questionArray.length;
+}
+
 // Notifies the user the Guessing Game is about to begin
 alert('Let\'s start the Guessing Game!');
 
@@ -150,6 +156,9 @@ alert('Let\'s start the Guessing Game!');
 askQuestion1_5();
 askQuestion6(5);
 askQuestion7(6);
+
+// Writes user's score to the document
+writeScore(playerScore);
 
 // Displays the user's score compared to the total number of questions
 alert('You got ' + playerScore + ' of ' + questionArray.length + ' questions correct, ' + userName + '!');
